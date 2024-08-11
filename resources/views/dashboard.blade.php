@@ -53,9 +53,9 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     @if($task->completed === 1)
-                                        <a href="" class="text-blue-500">Completed</a>
+                                        <a href="{{ route('change_task_status',['id'=>$task->id]) }}" class="text-blue-500">Completed</a>
                                     @else
-                                        <a href="" class="text-yellow-600">Pending</a>
+                                        <a href="{{ route('change_task_status',['id'=>$task->id]) }}" class="text-yellow-600">Pending</a>
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

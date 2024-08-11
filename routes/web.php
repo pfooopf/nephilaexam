@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [HomeController::class, 'index'])
 ->middleware(['auth'])->name('dashboard');
+
+Route::get('/change_task_status/{id}',[TaskController::class,'change_status'])->middleware(['auth'])->name('change_task_status');
 
 require __DIR__.'/auth.php';
